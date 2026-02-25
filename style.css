@@ -148,6 +148,12 @@ body {
   cursor: pointer;
 }
 
+/************* Links ***********************/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 /************* FOOTER ***************************/
 .footer {
