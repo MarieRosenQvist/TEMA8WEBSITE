@@ -197,3 +197,33 @@ a {
   font-size: 0.8rem;
   color: #777;
 }
+
+
+/*********** BADGES *******************/
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 5px;
+  color: white;
+}
+
+.sale {
+  background: red;
+}
+
+.sold {
+  background: black;
+}
+
+/******** SOLD OUT **********/
+.product.soldout {
+  opacity: 0.6;
+}
+
+.product.soldout img {
+  filter: grayscale(100%);
+}
