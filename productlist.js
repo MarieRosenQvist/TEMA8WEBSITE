@@ -3,12 +3,31 @@ const category = params.get("category");
 
 const url = `https://kea-alt-del.dk/t7/api/products?category=${category}&limit=20`;
 
-fetch(url)
-  .then(response => response.json())
-  .then(data => showProducts(data));
+let allProducts = [];
+function getProducts() {
+  fetch(listURL)
+    .then(response => response.json())
+    .then((products)=>{
+      allProducts = products; // gem orginaldata
+          showProducts(allProducts);
+    });
+  {
+    
+  }
 
 function showProducts(products) {
-  const container = document.querySelector(".products");
+  listContainer.innerHTML = "";
+
+  products.forEach((product)=>{
+    listContainer.innerHTML += `
+  <article class="productCard">
+    <h3>${product.productdisplayname}</h3>
+    <p>Pris:${product.price}</p>
+  </article>
+  `;
+});
+}
+ 
 
 products.forEach(product => {
   const imagePath = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
@@ -31,6 +50,8 @@ products.forEach(product => {
 }
 
 
+
+
 const listContainer = document.querySelector("#productListContainer");
 const sortByPriceBtn = document.querySelector("#prissortering");
 function sortByPriceAsc (){
@@ -39,3 +60,5 @@ function sortByPriceAsc (){
 
 sortByPriceBtn.addEventListener("click", sortByPriceAsc);
 
+
+ const container = document.querySelector(".products");
