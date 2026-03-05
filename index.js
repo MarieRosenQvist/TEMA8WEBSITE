@@ -5,14 +5,20 @@ fetch(url)
   .then(data => showCategories(data));
 
 function showCategories(categories) {
+
   const container = document.querySelector(".container");
 
-categories.forEach(category => {
-  container.innerHTML += `
-    <a href="productlist.html?category=${category.category}" class="card">
-      ${category.category}
-    </a>
-  `;
-});
-}
+  container.innerHTML = "";
 
+  categories.forEach(category => {
+
+    container.innerHTML += `
+      <a href="productlist.html?category=${category.category}" class="card">
+        ${category.category}
+      </a>
+    `;
+
+  });
+  console.log(categories);
+
+}

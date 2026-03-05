@@ -43,13 +43,12 @@ body {
 
 /***************** Product LIST *****************/
 
-.products {
+#productListContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   padding: 2rem;
 }
-
 .product {
   display: flex;
   flex-direction: column;
@@ -66,6 +65,17 @@ body {
 .product img {
   width: 100%;
   border-radius: 8px;
+}
+.product:hover {
+  transform: translateY(-5px);
+  background: #eee;
+}
+.product h2 {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+.product .price {
+  font-weight: bold;
 }
 
 
@@ -226,4 +236,14 @@ a {
 
 .product.soldout img {
   filter: grayscale(100%);
+}
+
+
+.home-btn {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background: black;
+  color: white;
+  border-radius: 5px;
 }
