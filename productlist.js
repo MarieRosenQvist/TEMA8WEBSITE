@@ -29,3 +29,13 @@ products.forEach(product => {
   `;
 });
 }
+
+
+const listContainer = document.querySelector("#productListContainer");
+const sortByPriceBtn = document.querySelector("#prissortering");
+function sortByPriceAsc (){
+  console.log(sortByPriceAsc);
+}
+
+sortByPriceBtn.addEventListener("click", sortByPriceAsc);
+
